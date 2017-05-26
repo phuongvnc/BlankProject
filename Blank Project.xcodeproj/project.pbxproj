@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		442ED6056D60C2FBE58E2E8A /* Pods_Blank_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5FBF2FE3CBAFF54BCF657A /* Pods_Blank_Project.framework */; };
+		5133A4541ED7CEBF00385C38 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133A4521ED7CEBF00385C38 /* BaseNavigationController.swift */; };
+		5133A4551ED7CEBF00385C38 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133A4531ED7CEBF00385C38 /* BaseViewController.swift */; };
+		5133A45E1ED7CF9600385C38 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133A45C1ED7CF9600385C38 /* DataProvider.swift */; };
+		5133A45F1ED7CF9600385C38 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133A45D1ED7CF9600385C38 /* Dynamic.swift */; };
 		517E6CC41ED2889F00D5002E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CB31ED2889F00D5002E /* AppDelegate.swift */; };
 		517E6CC51ED2889F00D5002E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CB51ED2889F00D5002E /* ViewController.swift */; };
 		517E6CC61ED2889F00D5002E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517E6CBB1ED2889F00D5002E /* Assets.xcassets */; };
@@ -23,8 +27,6 @@
 		517E6CDD1ED289AC00D5002E /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CDA1ED289AC00D5002E /* Strings.swift */; };
 		517E6CDE1ED289AC00D5002E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CDB1ED289AC00D5002E /* Helper.swift */; };
 		517E6CE01ED289E700D5002E /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CDF1ED289E700D5002E /* DatePicker.swift */; };
-		517E6CE31ED28A4E00D5002E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CE11ED28A4E00D5002E /* BaseViewController.swift */; };
-		517E6CE41ED28A4E00D5002E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CE21ED28A4E00D5002E /* BaseNavigationController.swift */; };
 		517E6CED1ED2901100D5002E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CE61ED2901100D5002E /* APIManager.swift */; };
 		517E6CEE1ED2901100D5002E /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CE71ED2901100D5002E /* APIPath.swift */; };
 		517E6CEF1ED2901100D5002E /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CE81ED2901100D5002E /* BaseService.swift */; };
@@ -47,6 +49,10 @@
 
 /* Begin PBXFileReference section */
 		3E970E0BA68A26B32AA23BF9 /* Pods-Blank Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blank Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blank Project/Pods-Blank Project.debug.xcconfig"; sourceTree = "<group>"; };
+		5133A4521ED7CEBF00385C38 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		5133A4531ED7CEBF00385C38 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5133A45C1ED7CF9600385C38 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		5133A45D1ED7CF9600385C38 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		517E6C9D1ED2880800D5002E /* Blank Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blank Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		517E6CB31ED2889F00D5002E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		517E6CB51ED2889F00D5002E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,8 +70,6 @@
 		517E6CDA1ED289AC00D5002E /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		517E6CDB1ED289AC00D5002E /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		517E6CDF1ED289E700D5002E /* DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
-		517E6CE11ED28A4E00D5002E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = "Blank Project/BaseViewController.swift"; sourceTree = SOURCE_ROOT; };
-		517E6CE21ED28A4E00D5002E /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = "Blank Project/BaseNavigationController.swift"; sourceTree = SOURCE_ROOT; };
 		517E6CE61ED2901100D5002E /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		517E6CE71ED2901100D5002E /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
 		517E6CE81ED2901100D5002E /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -110,6 +114,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5133A45B1ED7CF9600385C38 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5133A45C1ED7CF9600385C38 /* DataProvider.swift */,
+				5133A45D1ED7CF9600385C38 /* Dynamic.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		517E6C941ED2880800D5002E = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +154,7 @@
 				517E6CBA1ED2889F00D5002E /* Resources */,
 				517E6CC01ED2889F00D5002E /* Services */,
 				517E6CC11ED2889F00D5002E /* Targets */,
+				5133A45B1ED7CF9600385C38 /* ViewModel */,
 				517E6CC31ED2889F00D5002E /* Views */,
 			);
 			path = "Blank Project";
@@ -245,8 +259,8 @@
 		517E6CCA1ED288EC00D5002E /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				517E6CE11ED28A4E00D5002E /* BaseViewController.swift */,
-				517E6CE21ED28A4E00D5002E /* BaseNavigationController.swift */,
+				5133A4521ED7CEBF00385C38 /* BaseNavigationController.swift */,
+				5133A4531ED7CEBF00385C38 /* BaseViewController.swift */,
 				517E6CFC1ED2BBF500D5002E /* BaseNibView.swift */,
 			);
 			path = Base;
@@ -404,20 +418,22 @@
 				517E6CE01ED289E700D5002E /* DatePicker.swift in Sources */,
 				5180B8371ED6B56A00F9EC79 /* LocationManager.swift in Sources */,
 				517E6CD41ED2898300D5002E /* UIApplicationExtension.swift in Sources */,
+				5133A4551ED7CEBF00385C38 /* BaseViewController.swift in Sources */,
 				517E6CDD1ED289AC00D5002E /* Strings.swift in Sources */,
 				517E6CD31ED2898300D5002E /* UIViewExtension.swift in Sources */,
 				517E6CFD1ED2BBF500D5002E /* BaseNibView.swift in Sources */,
 				517E6CFF1ED2BE7800D5002E /* CGRectExtension.swift in Sources */,
+				5133A4541ED7CEBF00385C38 /* BaseNavigationController.swift in Sources */,
 				517E6CCE1ED2896500D5002E /* User.swift in Sources */,
-				517E6CE31ED28A4E00D5002E /* BaseViewController.swift in Sources */,
 				517E6CEF1ED2901100D5002E /* BaseService.swift in Sources */,
 				517E6CCC1ED2893A00D5002E /* UserManager.swift in Sources */,
-				517E6CE41ED28A4E00D5002E /* BaseNavigationController.swift in Sources */,
 				517E6CF71ED2999900D5002E /* ConfigNotification.swift in Sources */,
 				517E6CEE1ED2901100D5002E /* APIPath.swift in Sources */,
 				517E6CF21ED2901100D5002E /* ServiceError.swift in Sources */,
 				517E6CD81ED289A200D5002E /* DateExtension.swift in Sources */,
 				5180B8411ED71CAE00F9EC79 /* UIColorExtension.swift in Sources */,
+				5133A45F1ED7CF9600385C38 /* Dynamic.swift in Sources */,
+				5133A45E1ED7CF9600385C38 /* DataProvider.swift in Sources */,
 				517E6D031ED2C36900D5002E /* TimerExtension.swift in Sources */,
 				517E6CC51ED2889F00D5002E /* ViewController.swift in Sources */,
 				517E6D051ED2C55300D5002E /* UIImageViewExtension.swift in Sources */,
