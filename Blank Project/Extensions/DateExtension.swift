@@ -25,6 +25,13 @@ extension Date {
         dateFormatter.timeZone = localized ? TimeZone.current : TimeZone(secondsFromGMT: 0)
         return dateFormatter.string(from: self)
     }
+
+    func component(unit: Calendar.Component) -> Int {
+        let calendar = Calendar(identifier: .gregorian)
+        return calendar.component(unit, from: self)
+    }
+
+    
 }
 
 extension String {

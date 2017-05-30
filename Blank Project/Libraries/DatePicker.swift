@@ -108,8 +108,8 @@ class DatePicker: UIView {
                                    height: heightToolbar)
         frame = CGRect(x: 0, y: view.frame.height - heightView, width: view.frame.width, height: heightView)
         view.addSubview(self)
-        let pickerDuration = animated ? 0.4 : 0
-        let toolbarDuration = animated ? 0.6 : 0
+        let pickerDuration = animated ? 0.3 : 0
+        let toolbarDuration = animated ? 0.4 : 0
         UIView.animate(withDuration: pickerDuration, animations: {
             self.datePicker.frame = CGRect(x: 0,
                                            y: self.heightToolbar,
@@ -125,15 +125,14 @@ class DatePicker: UIView {
                                             height: self.heightToolbar)
 
         })
-
-
     }
+
 
     func hide(animated: Bool = true) {
         guard let view = self.superview else {
             return
         }
-        let duration = animated ? 0.4 : 0
+        let duration = animated ? 0.3 : 0
         UIView.animate(withDuration: duration, animations: {
             self.dateToolbar.frame = CGRect(x: 0,
                                             y: self.heightView,

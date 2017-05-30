@@ -11,10 +11,10 @@ import IQKeyboardManagerSwift
 import MBProgressHUD
 
 protocol AlertViewController { }
-protocol LoadingViewController {}
+protocol LoadingViewController { }
 
 extension AlertViewController where Self: UIViewController {
-    func showAlertView(title: String?, message: String?, cancelButton: String?, otherButtons: [String]? = nil, cancelAction: (() -> ())? = nil, otherAction: ((Int) -> ())? = nil) {
+    func showAlertView(title: String?, message: String?, cancelButton: String?, otherButtons: [String]? = nil, type: UIAlertControllerStyle = .alert, cancelAction: (() -> ())? = nil, otherAction: ((Int) -> ())? = nil) {
         let alertViewController = UIAlertController(title: title,
                                                     message: message,
                                                     preferredStyle: .alert)
@@ -39,6 +39,7 @@ extension AlertViewController where Self: UIViewController {
             self.present(alertViewController, animated: true, completion: nil)
         }
     }
+
 }
 
 extension LoadingViewController where Self: UIViewController {
@@ -149,6 +150,7 @@ class BaseViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
     }
+
 }
 
 // MARK: UIViewController

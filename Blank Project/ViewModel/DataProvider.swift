@@ -14,7 +14,6 @@ protocol TableViewProvider {
 }
 
 protocol CollectionViewProvider {
-
     func numberOfItem() -> Int
     func sizeForItem(atIndexPath indexPath: IndexPath) -> CGSize
 }

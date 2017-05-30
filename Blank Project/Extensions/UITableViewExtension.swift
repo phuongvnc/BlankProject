@@ -14,6 +14,10 @@ extension UITableView {
         tableHeaderView = UIView()
     }
 
+    func removeFooterTableView() {
+        tableFooterView = UIView()
+    }
+
     func setAndLayoutTableHeaderView(header: UIView?) {
         guard let header = header else {
             return
@@ -27,21 +31,38 @@ extension UITableView {
         tableHeaderView = header
     }
 
+    func setAndLayoutTableFooterView(footer: UIView?) {
+        guard let footer = footer else {
+            return
+        }
+        footer.setNeedsLayout()
+        footer.layoutIfNeeded()
+        let height = footer.systemLayoutSizeFitting(CGSize(width: bounds.width, height: 0), withHorizontalFittingPriority: UILayoutPriorityRequired, verticalFittingPriority: UILayoutPriorityFittingSizeLevel).height
+        var frame = footer.frame
+        frame.size.height = height
+        footer.frame = frame
+        tableFooterView = footer
+    }
+
     func registerCell<T:UITableViewCell>(aClass: T.Type) {
         let className = String(describing: aClass)
         let nibFile = UINib(nibName: className , bundle: nil)
         register(nibFile, forCellReuseIdentifier: className)
     }
 
-    func dequeueCell<T: UITableViewCell> (aClass: T.Type, indexPath: IndexPath) -> T? {
+    func dequeueCell<T: UITableViewCell> (aClass: T.Type, indexPath: IndexPath) -> T {
         let className = String(describing: aClass)
-        let cell = dequeueReusableCell(withIdentifier: className, for: indexPath)
-        return cell as? T
+        guard let cell = dequeueReusableCell(withIdentifier: className, for: indexPath) as? T else {
+            fatalError("\(className) isn't register")
+        }
+        return cell
     }
 
-    func dequeueCell<T: UITableViewCell> (aClass: T.Type) -> T? {
+    func dequeueCell<T: UITableViewCell> (aClass: T.Type) -> T {
         let className = String(describing: aClass)
-        let cell = dequeueReusableCell(withIdentifier: className)
-        return cell as? T
+        guard let cell = dequeueReusableCell(withIdentifier: className) as? T else {
+            fatalError("\(className) isn't register")
+        }
+        return cell
     }
 }

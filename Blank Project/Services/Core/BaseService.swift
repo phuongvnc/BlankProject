@@ -16,35 +16,34 @@ class BaseService {
         return ""
     }
 
-
-
-    func request(method: METHOD, path: URLConvertible, params: Parameter? = nil, completion: @escaping ServiceCompletion) {
+    func request(input: BaseInputProtocol, completion: @escaping ServiceCompletion) {
 
         if !reachability.isReachable() {
-            completion(APIResult.error(APIError.internetError))
+            completion(APIResult.failure(APIError.internetError))
             return
         }
         var header: Header? = Header()
         if let accessToken = accessToken {
-                header?["access-token"] = accessToken
+            header?["access-token"] = accessToken
         }
-
-
-        let _ = api.request(method: method, url: path, parameters: params, headers: header, completion: completion)
+        input.header?.append(header)
+        let _ = api.request(input: input, completion: completion)
     }
 
-    func requestService(method: METHOD, path: URLConvertible, params: Parameter? = nil, completion: @escaping ServiceCompletion) -> DataRequest? {
+    func requestService(input: BaseInputProtocol, completion: @escaping ServiceCompletion) -> DataRequest? {
 
         if !reachability.isReachable() {
-            completion(APIResult.error(APIError.internetError))
+            completion(APIResult.failure(APIError.internetError))
             return nil
         }
 
         var header: Header? = Header()
         if let accessToken = accessToken {
-                header?["access-token"] = accessToken
+            header?["access-token"] = accessToken
         }
-        return api.request(method: method, url: path, parameters: params, headers: header, completion: completion)
-    }
 
+        input.header?.append(header)
+        return api.request(input: input, completion: completion)
+    }
+    
 }

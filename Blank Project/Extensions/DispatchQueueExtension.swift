@@ -17,7 +17,6 @@ extension DispatchQueue {
     }
 }
 
-
 class GCDGroup {
     var queue: DispatchQueue!
     var group: DispatchGroup!

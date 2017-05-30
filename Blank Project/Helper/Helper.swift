@@ -60,14 +60,13 @@ class Helper {
         return UIDevice.current.userInterfaceIdiom == .pad
     }
 
-
     class func vibration() {
         AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
 
-    class func readBankJSON() -> [String: Any]? {
-        guard let path = Bundle.main.path(forResource: "bank", ofType: "json") else {
+    class func readJSON(name:String) -> [String: Any]? {
+        guard let path = Bundle.main.path(forResource: name, ofType: "json") else {
             return nil
         }
         do {

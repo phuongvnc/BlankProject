@@ -34,8 +34,7 @@ class UserManager {
     func save() {
         if let user = user {
             let path = pathForUserDataFile()
-            let saved = NSKeyedArchiver.archiveRootObject(user, toFile: path)
-            if !saved {
+            if !NSKeyedArchiver.archiveRootObject(user, toFile: path) {
                 assertionFailure("Save user info failed")
             }
         }

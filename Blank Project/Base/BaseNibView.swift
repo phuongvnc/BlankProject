@@ -13,7 +13,7 @@ class BaseNibView: UIView {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        let nibView = UIView.loadSingleView(fromNib: type(of: self),owner: self)
+        let nibView = UIView.loadXibView(fromNib: type(of: self),owner: self)
         addSubview(nibView)
         self.nibView = nibView
     }

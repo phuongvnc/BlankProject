@@ -11,10 +11,12 @@ import UIKit
 extension UIView {
 
     var snapshotImage: UIImage {
+        UIView.setAnimationsEnabled(false)
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.main.scale)
         drawHierarchy(in: self.bounds, afterScreenUpdates: false)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        UIView.setAnimationsEnabled(true)
         return image!
     }
 
@@ -52,19 +54,23 @@ extension UIView {
         layer.borderColor = color.cgColor
     }
 
-    static var className: String {
-        return String(describing: self)
+
+    class func loadXibView<T: UIView>(fromNib viewType: T.Type, owner: Any?) -> UIView {
+        let nibName = String(describing: viewType)
+        return UINib.nib(named: nibName).instantiate(withOwner: owner, options: nil)[0] as! UIView
     }
 
     class func loadView<T: UIView>(fromNib viewType: T.Type) -> T {
         let nibName = String(describing: viewType)
-        let view = Bundle.main.loadNibNamed(nibName, owner: self, options: nil)?.first as! T
+        guard let view = Bundle.main.loadNibNamed(nibName, owner: self, options: nil)?.first as? T else {
+            fatalError("\(T.className) isn't exist")
+        }
         return view
     }
 
-    class func loadSingleView<T: UIView>(fromNib viewType: T.Type, owner: Any?) -> UIView {
-        let nibName = String(describing: viewType)
-        return UINib.nib(named: nibName).instantiate(withOwner: owner, options: nil)[0] as! UIView
+    class func loadView() -> Self {
+        let view = loadView(fromNib: self)
+        return view
     }
 }
 

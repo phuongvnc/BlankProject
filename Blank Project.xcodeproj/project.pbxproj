@@ -8,10 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		442ED6056D60C2FBE58E2E8A /* Pods_Blank_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5FBF2FE3CBAFF54BCF657A /* Pods_Blank_Project.framework */; };
+		510475AD1EDBD6790068D817 /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510475AC1EDBD6790068D817 /* UIStoryboardExtension.swift */; };
+		510475AF1EDBD98E0068D817 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510475AE1EDBD98E0068D817 /* NSObjectExtension.swift */; };
+		510475B11EDBDA870068D817 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510475B01EDBDA870068D817 /* UICollectionViewExtension.swift */; };
+		510475B31EDBDD960068D817 /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510475B21EDBDD960068D817 /* UIScrollViewExtension.swift */; };
+		510475B51EDC096E0068D817 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510475B41EDC096E0068D817 /* StringExtension.swift */; };
 		5133A4541ED7CEBF00385C38 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133A4521ED7CEBF00385C38 /* BaseNavigationController.swift */; };
 		5133A4551ED7CEBF00385C38 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133A4531ED7CEBF00385C38 /* BaseViewController.swift */; };
 		5133A45E1ED7CF9600385C38 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133A45C1ED7CF9600385C38 /* DataProvider.swift */; };
 		5133A45F1ED7CF9600385C38 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133A45D1ED7CF9600385C38 /* Dynamic.swift */; };
+		5133A4851ED823F500385C38 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133A4841ED823F500385C38 /* LocalNotificationManager.swift */; };
+		5133A4871ED8263200385C38 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5133A4861ED8263200385C38 /* UserNotifications.framework */; };
+		513B87D51EDD607500A5D44B /* BaseInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B87D41EDD607500A5D44B /* BaseInputProtocol.swift */; };
+		513B87D71EDD622700A5D44B /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B87D61EDD622700A5D44B /* DictionaryExtension.swift */; };
 		517E6CC41ED2889F00D5002E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CB31ED2889F00D5002E /* AppDelegate.swift */; };
 		517E6CC51ED2889F00D5002E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CB51ED2889F00D5002E /* ViewController.swift */; };
 		517E6CC61ED2889F00D5002E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517E6CBB1ED2889F00D5002E /* Assets.xcassets */; };
@@ -30,7 +39,6 @@
 		517E6CED1ED2901100D5002E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CE61ED2901100D5002E /* APIManager.swift */; };
 		517E6CEE1ED2901100D5002E /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CE71ED2901100D5002E /* APIPath.swift */; };
 		517E6CEF1ED2901100D5002E /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CE81ED2901100D5002E /* BaseService.swift */; };
-		517E6CF01ED2901100D5002E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CE91ED2901100D5002E /* Error.swift */; };
 		517E6CF11ED2901100D5002E /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CEA1ED2901100D5002E /* ResponseSerializer.swift */; };
 		517E6CF21ED2901100D5002E /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CEB1ED2901100D5002E /* ServiceError.swift */; };
 		517E6CF51ED2901800D5002E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CF41ED2901800D5002E /* Services.swift */; };
@@ -49,10 +57,19 @@
 
 /* Begin PBXFileReference section */
 		3E970E0BA68A26B32AA23BF9 /* Pods-Blank Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blank Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blank Project/Pods-Blank Project.debug.xcconfig"; sourceTree = "<group>"; };
+		510475AC1EDBD6790068D817 /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
+		510475AE1EDBD98E0068D817 /* NSObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
+		510475B01EDBDA870068D817 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		510475B21EDBDD960068D817 /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
+		510475B41EDC096E0068D817 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5133A4521ED7CEBF00385C38 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		5133A4531ED7CEBF00385C38 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5133A45C1ED7CF9600385C38 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		5133A45D1ED7CF9600385C38 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		5133A4841ED823F500385C38 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		5133A4861ED8263200385C38 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		513B87D41EDD607500A5D44B /* BaseInputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInputProtocol.swift; sourceTree = "<group>"; };
+		513B87D61EDD622700A5D44B /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		517E6C9D1ED2880800D5002E /* Blank Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blank Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		517E6CB31ED2889F00D5002E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		517E6CB51ED2889F00D5002E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +90,6 @@
 		517E6CE61ED2901100D5002E /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		517E6CE71ED2901100D5002E /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
 		517E6CE81ED2901100D5002E /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
-		517E6CE91ED2901100D5002E /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		517E6CEA1ED2901100D5002E /* ResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerializer.swift; sourceTree = "<group>"; };
 		517E6CEB1ED2901100D5002E /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		517E6CF41ED2901800D5002E /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
@@ -97,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5133A4871ED8263200385C38 /* UserNotifications.framework in Frameworks */,
 				5180B8391ED6B69900F9EC79 /* CoreLocation.framework in Frameworks */,
 				442ED6056D60C2FBE58E2E8A /* Pods_Blank_Project.framework in Frameworks */,
 			);
@@ -180,18 +197,24 @@
 		517E6CB61ED2889F00D5002E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5180B8401ED71CAE00F9EC79 /* UIColorExtension.swift */,
-				517E6CCF1ED2898300D5002E /* UIViewExtension.swift */,
-				517E6CD01ED2898300D5002E /* UIApplicationExtension.swift */,
-				517E6CD11ED2898300D5002E /* UITableViewExtension.swift */,
-				517E6CD21ED2898300D5002E /* UINavigationControllerExtension.swift */,
+				517E6CFE1ED2BE7800D5002E /* CGRectExtension.swift */,
 				517E6CD71ED289A200D5002E /* DateExtension.swift */,
 				517E6CF81ED2B64D00D5002E /* DispatchQueueExtension.swift */,
-				517E6CFA1ED2BB8A00D5002E /* UINibExtension.swift */,
-				517E6CFE1ED2BE7800D5002E /* CGRectExtension.swift */,
+				510475AE1EDBD98E0068D817 /* NSObjectExtension.swift */,
 				517E6D021ED2C36900D5002E /* TimerExtension.swift */,
-				517E6D041ED2C55300D5002E /* UIImageViewExtension.swift */,
+				517E6CD01ED2898300D5002E /* UIApplicationExtension.swift */,
+				5180B8401ED71CAE00F9EC79 /* UIColorExtension.swift */,
 				5180B83E1ED71C6F00F9EC79 /* UIImageExtension.swift */,
+				517E6D041ED2C55300D5002E /* UIImageViewExtension.swift */,
+				517E6CD21ED2898300D5002E /* UINavigationControllerExtension.swift */,
+				517E6CFA1ED2BB8A00D5002E /* UINibExtension.swift */,
+				510475AC1EDBD6790068D817 /* UIStoryboardExtension.swift */,
+				517E6CD11ED2898300D5002E /* UITableViewExtension.swift */,
+				517E6CCF1ED2898300D5002E /* UIViewExtension.swift */,
+				510475B01EDBDA870068D817 /* UICollectionViewExtension.swift */,
+				510475B21EDBDD960068D817 /* UIScrollViewExtension.swift */,
+				510475B41EDC096E0068D817 /* StringExtension.swift */,
+				513B87D61EDD622700A5D44B /* DictionaryExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,6 +225,7 @@
 				517E6CDA1ED289AC00D5002E /* Strings.swift */,
 				517E6CDB1ED289AC00D5002E /* Helper.swift */,
 				5180B8361ED6B56A00F9EC79 /* LocationManager.swift */,
+				5133A4841ED823F500385C38 /* LocalNotificationManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -273,9 +297,9 @@
 				517E6CE61ED2901100D5002E /* APIManager.swift */,
 				517E6CE71ED2901100D5002E /* APIPath.swift */,
 				517E6CE81ED2901100D5002E /* BaseService.swift */,
-				517E6CE91ED2901100D5002E /* Error.swift */,
 				517E6CEA1ED2901100D5002E /* ResponseSerializer.swift */,
 				517E6CEB1ED2901100D5002E /* ServiceError.swift */,
+				513B87D41EDD607500A5D44B /* BaseInputProtocol.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -283,6 +307,7 @@
 		70DE37BCF4CCBACF3542EAC0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5133A4861ED8263200385C38 /* UserNotifications.framework */,
 				5180B8381ED6B69900F9EC79 /* CoreLocation.framework */,
 				CB5FBF2FE3CBAFF54BCF657A /* Pods_Blank_Project.framework */,
 			);
@@ -374,7 +399,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9E2D677CEE7279BB0CAF73D4 /* [CP] Embed Pods Frameworks */ = {
@@ -416,13 +441,17 @@
 			files = (
 				517E6CED1ED2901100D5002E /* APIManager.swift in Sources */,
 				517E6CE01ED289E700D5002E /* DatePicker.swift in Sources */,
+				5133A4851ED823F500385C38 /* LocalNotificationManager.swift in Sources */,
 				5180B8371ED6B56A00F9EC79 /* LocationManager.swift in Sources */,
 				517E6CD41ED2898300D5002E /* UIApplicationExtension.swift in Sources */,
 				5133A4551ED7CEBF00385C38 /* BaseViewController.swift in Sources */,
 				517E6CDD1ED289AC00D5002E /* Strings.swift in Sources */,
+				510475AF1EDBD98E0068D817 /* NSObjectExtension.swift in Sources */,
 				517E6CD31ED2898300D5002E /* UIViewExtension.swift in Sources */,
+				513B87D71EDD622700A5D44B /* DictionaryExtension.swift in Sources */,
 				517E6CFD1ED2BBF500D5002E /* BaseNibView.swift in Sources */,
 				517E6CFF1ED2BE7800D5002E /* CGRectExtension.swift in Sources */,
+				510475B51EDC096E0068D817 /* StringExtension.swift in Sources */,
 				5133A4541ED7CEBF00385C38 /* BaseNavigationController.swift in Sources */,
 				517E6CCE1ED2896500D5002E /* User.swift in Sources */,
 				517E6CEF1ED2901100D5002E /* BaseService.swift in Sources */,
@@ -433,6 +462,7 @@
 				517E6CD81ED289A200D5002E /* DateExtension.swift in Sources */,
 				5180B8411ED71CAE00F9EC79 /* UIColorExtension.swift in Sources */,
 				5133A45F1ED7CF9600385C38 /* Dynamic.swift in Sources */,
+				510475B11EDBDA870068D817 /* UICollectionViewExtension.swift in Sources */,
 				5133A45E1ED7CF9600385C38 /* DataProvider.swift in Sources */,
 				517E6D031ED2C36900D5002E /* TimerExtension.swift in Sources */,
 				517E6CC51ED2889F00D5002E /* ViewController.swift in Sources */,
@@ -440,12 +470,14 @@
 				517E6CC41ED2889F00D5002E /* AppDelegate.swift in Sources */,
 				517E6CF91ED2B64D00D5002E /* DispatchQueueExtension.swift in Sources */,
 				517E6CD51ED2898300D5002E /* UITableViewExtension.swift in Sources */,
+				510475AD1EDBD6790068D817 /* UIStoryboardExtension.swift in Sources */,
 				517E6CFB1ED2BB8A00D5002E /* UINibExtension.swift in Sources */,
+				510475B31EDBDD960068D817 /* UIScrollViewExtension.swift in Sources */,
 				517E6CF11ED2901100D5002E /* ResponseSerializer.swift in Sources */,
 				517E6CD61ED2898300D5002E /* UINavigationControllerExtension.swift in Sources */,
 				517E6CDE1ED289AC00D5002E /* Helper.swift in Sources */,
 				517E6CF51ED2901800D5002E /* Services.swift in Sources */,
-				517E6CF01ED2901100D5002E /* Error.swift in Sources */,
+				513B87D51EDD607500A5D44B /* BaseInputProtocol.swift in Sources */,
 				5180B83F1ED71C6F00F9EC79 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,6 +602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G634GDT76N;
 				INFOPLIST_FILE = "$(SRCROOT)/Blank Project/Targets/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cp.dev.Blank-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -584,6 +617,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G634GDT76N;
 				INFOPLIST_FILE = "$(SRCROOT)/Blank Project/Targets/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cp.dev.Blank-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";

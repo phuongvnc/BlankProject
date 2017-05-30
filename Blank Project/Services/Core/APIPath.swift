@@ -11,10 +11,11 @@ import Alamofire
 
 class APIPath {
 
-    static var EndPoint = "https://dev.wellmeshi.com/api/v1/"
+    static var EndPoint = "https://dev.wellmeshi.com/"
+    static var EndVersion = "api/v1/"
 
     struct Login {
-        static var path: String { return EndPoint }
+        static var path: String { return EndPoint + EndVersion }
         static var loginFacebook: String { return path + "omniauth/facebook" }
         static var login: String { return path + "auth/sign_in" }
         static var forgot: String { return path + "auth/password" }

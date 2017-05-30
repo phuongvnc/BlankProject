@@ -43,7 +43,7 @@ extension UIColor {
         let threshold:CGFloat = 0.25
 
         if fabs(mainComponents[0] - compareComponents[0]) > threshold ||
-        fabs(mainComponents[1] - compareComponents[1]) > threshold ||
+            fabs(mainComponents[1] - compareComponents[1]) > threshold ||
             fabs(mainComponents[2] - compareComponents[2]) > threshold {
             if fabs(mainComponents[0] - mainComponents[1]) < 0.03 && fabs(compareComponents[0] - compareComponents[2]) < 0.03 {
                 if fabs(compareComponents[0] - compareComponents[1]) < 0.03 && fabs(compareComponents[0] - compareComponents[2]) < 0.03 {

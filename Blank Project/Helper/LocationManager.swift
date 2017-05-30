@@ -27,9 +27,11 @@ class LocationManager: NSObject {
 
     static let shared = LocationManager()
     var location: CLLocation?
-    var locationManager: CLLocationManager!
+    lazy var locationManager = CLLocationManager()
     var timer: Timer?
-    var status: CLAuthorizationStatus?
+    var status: CLAuthorizationStatus {
+        return CLLocationManager.authorizationStatus()
+    }
 
     weak var delegate: LocationManagerDelegate?
 
@@ -38,6 +40,7 @@ class LocationManager: NSObject {
         super.init()
         locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
     }
 
@@ -72,7 +75,7 @@ extension LocationManager: CLLocationManagerDelegate {
             delegate?.updateLocation(manager: self, location: newLocation)
         }
 
-        if let status = status, status == CLAuthorizationStatus.authorizedAlways  {
+        if status == .authorizedAlways  {
             gpsOff()
             timer?.invalidate()
             timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(gpsOn), userInfo: nil, repeats: false)
@@ -86,11 +89,16 @@ extension LocationManager: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        self.status = status
         delegate?.changeStatusLocation(manager: self, status: status)
+        switch status {
+        case .authorizedAlways,.authorizedWhenInUse:
+            break
+        case .denied:
+            break
+        default :
+            break
+        }
     }
-    
-    
-    
+
 }
 

@@ -1,9 +1,6 @@
 //
-//  ResponseSerializer.swift
-//  EParkRelax
-//
-//  Created by DaoNV on 3/7/16.
-//  Copyright © 2016 AsianTech Inc. All rights reserved.
+//  Created by PhuongVNC on 11/7/16.
+//  Copyright © 2016 Vo Nguyen Chi Phuong. All rights reserved.
 //
 
 import Alamofire
@@ -18,31 +15,39 @@ extension DataRequest {
             if let response = response {
                 self.saveCookies(response: response)
             }
+            
             backgroundQueue.addOperation({ () -> Void in
                 if let error = result.error {
-                    let apiError = APIError(code: 0, message: error.localizedDescription)
+                    let apiError = APIError(code: -1, message: error.localizedDescription)
                     OperationQueue.main.addOperation {
-                        completion(APIResult.error(apiError))
+                        completion(APIResult.failure(apiError))
                     }
                 } else {
                     switch response!.statusCode {
                     case 200...299:
                         if let object = result.value as? JSObject {
                             OperationQueue.main.addOperation {
-                            completion(APIResult.success(object))
+                                completion(APIResult.success(object))
                             }
-                        }
-
-                        if let array = result.value as? JSArray {
-                                     OperationQueue.main.addOperation {
-                            completion(APIResult.success(array))
+                        } else if let array = result.value as? JSArray {
+                            OperationQueue.main.addOperation {
+                                completion(APIResult.success(array))
+                            }
+                        } else {
+                            OperationQueue.main.addOperation {
+                                completion(APIResult.failure(APIError.jsonError))
                             }
                         }
                         break
                     default:
-                        let apiError = APIError(code: 0, message:"Handling error")
+                        var apiError = APIError(code: -1, message:"Handling error")
+
+                        if let status = HTTPStatusCode(rawValue: response!.statusCode) {
+                            apiError = status.error
+                        }
+
                         OperationQueue.main.addOperation {
-                            completion(APIResult.error(apiError))
+                            completion(APIResult.failure(apiError))
                         }
                         break
                     }

@@ -10,13 +10,7 @@ import Foundation
 import Alamofire
 import Reachability
 
-enum APIResult<T> {
-    case success(T)
 
-    case error(APIError)
-}
-
-typealias METHOD = HTTPMethod
 typealias ServiceResult = Alamofire.Result
 typealias JSObject = [String: AnyObject]
 typealias JSArray = [JSObject]
@@ -24,6 +18,47 @@ typealias Completion = (ServiceResult<Any>) -> Void
 typealias ServiceCompletion = (_ result: APIResult<Any>) -> Void
 typealias Header = HTTPHeaders
 typealias Parameter = Parameters
+
+
+enum APIResult<T> {
+    case success(T)
+    case failure(APIError)
+
+    var isSuccess: Bool {
+        switch self {
+        case .success:
+            return true
+        case .failure:
+            return false
+        }
+    }
+
+    var isFailure: Bool {
+        return !isSuccess
+    }
+
+
+    var value: T? {
+        switch self {
+        case .success(let value):
+            return value
+        case .failure:
+            return nil
+        }
+    }
+
+    var error: APIError? {
+        switch self {
+        case .success:
+            return nil
+        case .failure(let error):
+            return error
+        }
+    }
+
+}
+
+
 
 let serialQueue: OperationQueue = {
     let queue = OperationQueue()
@@ -55,11 +90,17 @@ class APIManager {
         return DownloadRequest.ValidationResult.success
     }
 
+    let uploadValidation: UploadRequest.Validation = { (request, response, data)
+        -> UploadRequest.ValidationResult in
+        return UploadRequest.ValidationResult.success
+    }
+
+
     var taskCount: Int {
         set {
             lock.sync {
-                let oldValue = self._taskCount
-                self._taskCount = newValue
+                let oldValue = self.taskCount
+                self.taskCount = newValue
                 if oldValue == 0 || newValue == 0 {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = newValue > 0
                 }
@@ -85,15 +126,15 @@ class APIManager {
         backgroundQueue.cancelAllOperations()
     }
 
-    func request(method: METHOD,
-                 url: URLConvertible,
-                 parameters: Parameter? = nil,
-                 headers: Header? = nil,
+    func request(input: BaseInputProtocol,
                  completion: @escaping ServiceCompletion) -> DataRequest {
-
-        let encode: URLEncoding = method == .get ? .queryString : .default
+        let encode: URLEncoding = input.method == .get ? .queryString : .default
         taskCount += 1
-        let request = Alamofire.request(url, method: method, parameters: parameters, encoding: encode, headers: headers)
+        let request = Alamofire.request(input.url,
+                                        method: input.method,
+                                        parameters: input.parameter,
+                                        encoding: encode,
+                                        headers: input.header)
         request.validate(validation)
         request.response(completion: completion)
         return request
@@ -101,7 +142,6 @@ class APIManager {
 
     func download(path: URLConvertible,
                   progress: ((_ progress: Float) -> Void)?,
-                  log: Bool = false,
                   completion: @escaping (_ filePath: URL?, _ error: Error?, _ info: String?) -> Void) -> Request {
 
         var filePath: URL!
@@ -114,21 +154,94 @@ class APIManager {
 
         request.downloadProgress { (pro) in
             if let progress = progress {
-                progress(Float(pro.completedUnitCount) / Float(pro.totalUnitCount))
+                DispatchQueue.main.async {
+                    progress(Float(pro.completedUnitCount) / Float(pro.totalUnitCount))
+                }
+
             }
             }.validate(downloadValidation).responseJSON { (downloadRespone) in
                 self.taskCount -= 1
                 switch downloadRespone.result {
                 case .success( _):
-                    completion(filePath, nil, nil)
+                    DispatchQueue.main.async {
+                        completion(filePath, nil, nil)
+                    }
+
                 case .failure(let error):
-                    completion(nil, error, nil)
+                    DispatchQueue.main.async {
+                        completion(nil, error, nil)
+                    }
                 }
         }
         return request
 
     }
+
+
+    func upload(path: URLConvertible,
+                data: Data,
+                name: String,
+                parameter: Parameter? = nil,
+                headers: Header? = nil,
+                progress: ((_ progress: Float) -> Void)?,
+                completion: @escaping (_ error: Error?, _ info: String?) -> Void) {
+
+        taskCount += 1
+
+        Alamofire.upload(multipartFormData: { (multiData: MultipartFormData) in
+            multiData.append(data, withName: "image")
+            if let parameter = parameter {
+                parameter.keys.forEach({ (key) in
+                    if let data = (parameter[key] as AnyObject).data(using:  String.Encoding.utf8.rawValue) {
+                        multiData.append(data, withName: key)
+                    }
+                })
+            }
+
+        }, usingThreshold: SessionManager.multipartFormDataEncodingMemoryThreshold ,
+           to: path,
+           method: .post,
+           headers: headers) { (result) in
+            switch result {
+            case .success(let upload, _ , _):
+                upload.validate(self.uploadValidation)
+
+                upload.uploadProgress(closure: { (pro) in
+                    if let progress = progress {
+                        DispatchQueue.main.async {
+                            progress(Float(pro.completedUnitCount) / Float(pro.totalUnitCount))
+                        }
+                    }
+                })
+
+                upload.responseJSON { response in
+                    self.taskCount -= 1
+                    switch response.result {
+                    case .success( _):
+                        DispatchQueue.main.async {
+                            completion(nil, "Success")
+                        }
+
+                    case .failure(let error):
+                        DispatchQueue.main.async {
+                            completion(error, nil)
+                        }
+
+                    }
+
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    completion(error, nil)
+                }
+
+            }
+        }
+
+    }
+
 }
+
 // MARK: - URLSession
 extension URLSession {
     func cancelAllTasks(completion: (() -> Void)?) {
