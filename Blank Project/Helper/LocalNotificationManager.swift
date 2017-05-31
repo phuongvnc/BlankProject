@@ -29,7 +29,7 @@ class LocalNotificationManager {
     func removeNotification(notification: UILocalNotification) {
         if #available(iOS 10.0, *) {
             let notificationCenter = UNUserNotificationCenter.current()
-            let identifier =  "\(self.identifier)_\(notification.fireDate!.toString(format: DateFormat.dateTime24, localized: true))"
+            let identifier =  "\(self.identifier)_\(notification.fireDate!.toString(format: DateFormat.DateTime24, localized: true))"
             notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
         } else {
             kApplication.cancelLocalNotification(notification)
@@ -59,7 +59,7 @@ class LocalNotificationManager {
             let timeInterval = date.timeIntervalSinceNow
             trigger =  UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         }
-        let identifier =  "\(self.identifier)_\(local.fireDate!.toString(format: DateFormat.dateTime24, localized: true))"
+        let identifier =  "\(self.identifier)_\(local.fireDate!.toString(format: DateFormat.DateTime24, localized: true))"
         let notificationRequest = UNNotificationRequest(identifier: identifier,
                                                         content: content, trigger: trigger)
         return notificationRequest

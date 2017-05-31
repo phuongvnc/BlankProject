@@ -44,7 +44,23 @@ extension UIView {
         shadowLayer.shadowPath = UIBezierPath(roundedRect: shadowLayer.bounds, cornerRadius: shadowLayer.cornerRadius).cgPath
     }
 
-    func cornerRadius(cornerRadius: CGFloat) {
+    func backgroundGradient(colors: [UIColor]) {
+        let _ = self.layer.sublayers?.filter({ $0.name == "GradientBackground" }).map({ $0.removeFromSuperlayer() })
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.name = "GradientBackground"
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+        gradientLayer.frame = bounds
+        gradientLayer.colors = colors
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
+
+    func removeGradient() {
+        let _ = self.layer.sublayers?.filter({ $0.name == "GradientBackground" }).map({ $0.removeFromSuperlayer() })
+        layer.mask?.removeFromSuperlayer()
+    }
+
+    func corner(_ cornerRadius: CGFloat) {
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = true
     }

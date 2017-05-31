@@ -144,7 +144,6 @@ class BaseViewController: UIViewController {
     @IBAction func close() {
         view.endEditing(true)
         navigationController?.dismiss(animated: true, completion: nil)
-
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -153,31 +152,3 @@ class BaseViewController: UIViewController {
 
 }
 
-// MARK: UIViewController
-extension UIViewController {
-
-    var className: String {
-        return String(describing: type(of: self))
-    }
-
-    static func vc() -> Self? {
-        if let strClass = self as? AnyClass {
-            let className = String(describing: type(of: self))
-            let bundle = Bundle(for: strClass)
-            return self.init(nibName: className, bundle: bundle)
-        }
-        return nil
-    }
-
-    func push(viewController: UIViewController, animation: Bool = true) {
-        navigationController?.pushViewController(viewController, animated: animation)
-    }
-
-    var isTopViewController: Bool {
-        if let topViewController = UIApplication.topViewController(), self == topViewController {
-            return true
-        } else {
-            return false
-        }
-    }
-}

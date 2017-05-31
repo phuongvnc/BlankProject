@@ -28,4 +28,8 @@ extension String {
         return self[Range(start ..< end)]
     }
 
+    func utf8String() -> String? {
+        return self.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlHostAllowed)
+    }
+
 }
