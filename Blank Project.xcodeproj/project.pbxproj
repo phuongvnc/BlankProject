@@ -26,6 +26,12 @@
 		514173951EDE525F00459F5D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514173941EDE525F00459F5D /* Array.swift */; };
 		514173991EDE566600459F5D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514173981EDE566600459F5D /* UIViewController.swift */; };
 		5141739B1EDE580400459F5D /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141739A1EDE580400459F5D /* NSObject.swift */; };
+		5141739D1EDE5E6600459F5D /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141739C1EDE5E6600459F5D /* Int.swift */; };
+		5141739F1EDE5F4300459F5D /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141739E1EDE5F4300459F5D /* Regex.swift */; };
+		514173A11EDE604500459F5D /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514173A01EDE604500459F5D /* RefreshControl.swift */; };
+		514173A51EDE60CF00459F5D /* NSLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514173A41EDE60CF00459F5D /* NSLock.swift */; };
+		514173A71EDE616300459F5D /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514173A61EDE616300459F5D /* FileManager.swift */; };
+		514173A91EDE626100459F5D /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514173A81EDE626100459F5D /* Bundle.swift */; };
 		517E6CC41ED2889F00D5002E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CB31ED2889F00D5002E /* AppDelegate.swift */; };
 		517E6CC51ED2889F00D5002E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CB51ED2889F00D5002E /* ViewController.swift */; };
 		517E6CC61ED2889F00D5002E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517E6CBB1ED2889F00D5002E /* Assets.xcassets */; };
@@ -80,6 +86,12 @@
 		514173941EDE525F00459F5D /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		514173981EDE566600459F5D /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		5141739A1EDE580400459F5D /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		5141739C1EDE5E6600459F5D /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		5141739E1EDE5F4300459F5D /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		514173A01EDE604500459F5D /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
+		514173A41EDE60CF00459F5D /* NSLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLock.swift; sourceTree = "<group>"; };
+		514173A61EDE616300459F5D /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		514173A81EDE626100459F5D /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		517E6C9D1ED2880800D5002E /* Blank Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blank Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		517E6CB31ED2889F00D5002E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		517E6CB51ED2889F00D5002E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -207,29 +219,35 @@
 		517E6CB61ED2889F00D5002E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5141739A1EDE580400459F5D /* NSObject.swift */,
+				514173941EDE525F00459F5D /* Array.swift */,
 				517E6CFE1ED2BE7800D5002E /* CGRect.swift */,
+				514173921EDE521900459F5D /* Data.swift */,
 				517E6CD71ED289A200D5002E /* Date.swift */,
+				513B87D61EDD622700A5D44B /* Dictionary.swift */,
 				517E6CF81ED2B64D00D5002E /* DispatchQueue.swift */,
+				5141739A1EDE580400459F5D /* NSObject.swift */,
+				510475B41EDC096E0068D817 /* String.swift */,
 				517E6D021ED2C36900D5002E /* Timer.swift */,
 				517E6CD01ED2898300D5002E /* UIApplication.swift */,
+				510475B01EDBDA870068D817 /* UICollectionView.swift */,
 				5180B8401ED71CAE00F9EC79 /* UIColor.swift */,
 				5180B83E1ED71C6F00F9EC79 /* UIImage.swift */,
 				517E6D041ED2C55300D5002E /* UIImageView.swift */,
+				514173901EDE503800459F5D /* UILabel.swift */,
 				517E6CD21ED2898300D5002E /* UINavigationController.swift */,
 				517E6CFA1ED2BB8A00D5002E /* UINib.swift */,
+				510475B21EDBDD960068D817 /* UIScrollView.swift */,
 				510475AC1EDBD6790068D817 /* UIStoryboard.swift */,
 				517E6CD11ED2898300D5002E /* UITableView.swift */,
-				517E6CCF1ED2898300D5002E /* UIView.swift */,
-				510475B01EDBDA870068D817 /* UICollectionView.swift */,
-				510475B21EDBDD960068D817 /* UIScrollView.swift */,
-				510475B41EDC096E0068D817 /* String.swift */,
-				513B87D61EDD622700A5D44B /* Dictionary.swift */,
 				5141738E1EDE4F8500459F5D /* UITextField.swift */,
-				514173901EDE503800459F5D /* UILabel.swift */,
-				514173921EDE521900459F5D /* Data.swift */,
-				514173941EDE525F00459F5D /* Array.swift */,
+				517E6CCF1ED2898300D5002E /* UIView.swift */,
 				514173981EDE566600459F5D /* UIViewController.swift */,
+				5141739C1EDE5E6600459F5D /* Int.swift */,
+				5141739E1EDE5F4300459F5D /* Regex.swift */,
+				514173A01EDE604500459F5D /* RefreshControl.swift */,
+				514173A41EDE60CF00459F5D /* NSLock.swift */,
+				514173A61EDE616300459F5D /* FileManager.swift */,
+				514173A81EDE626100459F5D /* Bundle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -457,6 +475,7 @@
 				517E6CED1ED2901100D5002E /* APIManager.swift in Sources */,
 				517E6CE01ED289E700D5002E /* DatePicker.swift in Sources */,
 				5133A4851ED823F500385C38 /* LocalNotificationManager.swift in Sources */,
+				514173A71EDE616300459F5D /* FileManager.swift in Sources */,
 				5180B8371ED6B56A00F9EC79 /* LocationManager.swift in Sources */,
 				514173911EDE503800459F5D /* UILabel.swift in Sources */,
 				517E6CD41ED2898300D5002E /* UIApplication.swift in Sources */,
@@ -466,9 +485,12 @@
 				5141738F1EDE4F8500459F5D /* UITextField.swift in Sources */,
 				513B87D71EDD622700A5D44B /* Dictionary.swift in Sources */,
 				517E6CFD1ED2BBF500D5002E /* BaseNibView.swift in Sources */,
+				514173A91EDE626100459F5D /* Bundle.swift in Sources */,
+				514173A51EDE60CF00459F5D /* NSLock.swift in Sources */,
 				5141739B1EDE580400459F5D /* NSObject.swift in Sources */,
 				517E6CFF1ED2BE7800D5002E /* CGRect.swift in Sources */,
 				510475B51EDC096E0068D817 /* String.swift in Sources */,
+				514173A11EDE604500459F5D /* RefreshControl.swift in Sources */,
 				5133A4541ED7CEBF00385C38 /* BaseNavigationController.swift in Sources */,
 				517E6CCE1ED2896500D5002E /* User.swift in Sources */,
 				517E6CEF1ED2901100D5002E /* BaseService.swift in Sources */,
@@ -488,6 +510,7 @@
 				517E6CC41ED2889F00D5002E /* AppDelegate.swift in Sources */,
 				517E6CF91ED2B64D00D5002E /* DispatchQueue.swift in Sources */,
 				517E6CD51ED2898300D5002E /* UITableView.swift in Sources */,
+				5141739F1EDE5F4300459F5D /* Regex.swift in Sources */,
 				514173931EDE521900459F5D /* Data.swift in Sources */,
 				510475AD1EDBD6790068D817 /* UIStoryboard.swift in Sources */,
 				517E6CFB1ED2BB8A00D5002E /* UINib.swift in Sources */,
@@ -495,6 +518,7 @@
 				517E6CF11ED2901100D5002E /* ResponseSerializer.swift in Sources */,
 				517E6CD61ED2898300D5002E /* UINavigationController.swift in Sources */,
 				517E6CDE1ED289AC00D5002E /* Helper.swift in Sources */,
+				5141739D1EDE5E6600459F5D /* Int.swift in Sources */,
 				517E6CF51ED2901800D5002E /* Services.swift in Sources */,
 				513B87D51EDD607500A5D44B /* BaseInputProtocol.swift in Sources */,
 				5180B83F1ED71C6F00F9EC79 /* UIImage.swift in Sources */,

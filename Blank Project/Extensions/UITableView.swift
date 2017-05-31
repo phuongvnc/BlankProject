@@ -10,6 +10,18 @@ import UIKit
 
 extension UITableView {
 
+    override open var delaysContentTouches: Bool {
+        didSet {
+            for view in subviews {
+                if let scroll = view as? UIScrollView {
+                    scroll.delaysContentTouches = delaysContentTouches
+                }
+                break
+            }
+        }
+    }
+
+
     func removeHeaderTableView() {
         tableHeaderView = UIView()
     }
@@ -42,6 +54,23 @@ extension UITableView {
         frame.size.height = height
         footer.frame = frame
         tableFooterView = footer
+    }
+
+    func scrollsToBottom(animated: Bool) {
+        let section = numberOfSections - 1
+        let row = numberOfRows(inSection: section) - 1
+        if section < 0 || row < 0 {
+            return
+        }
+        let path = IndexPath(row: row, section: section)
+        let offset = contentOffset.y
+        scrollToRow(at: path, at: .top, animated: animated)
+        let delay = (animated ? 0.2 : 0.0) * Double(NSEC_PER_SEC)
+        DispatchQueue.after(time: delay) { 
+            if self.contentOffset.y != offset {
+                self.scrollsToBottom(animated: false)
+            }
+        }
     }
 
     func registerCell<T:UITableViewCell>(aClass: T.Type) {

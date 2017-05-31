@@ -32,4 +32,90 @@ extension String {
         return self.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlHostAllowed)
     }
 
+    var intValue: Int? {
+        return Int(self)
+    }
+
+    var doubleValue: Double? {
+        return Double(self)
+    }
+
+    var floatValue: Float? {
+        return Float(self)
+    }
+
+    var boolValue: Bool {
+        return (self as NSString).boolValue
+    }
+
+    func stringByAppendingPathComponent(str: String) -> String {
+        return (self as NSString).appendingPathComponent(str)
+    }
+
+    var pathComponents: [String] {
+        return (self as NSString).pathComponents
+    }
+
+    var lastPathComponent: String {
+        return (self as NSString).lastPathComponent
+    }
+
+    var pathExtension: String {
+        return (self as NSString).pathExtension
+    }
+
+    var url: NSURL? {
+        return NSURL(string: self)!
+    }
+
+    func validate(regex: String) -> Bool {
+        let pre = NSPredicate(format: "SELF MATCHES %@", regex)
+        return pre.evaluate(with: self)
+    }
+
+    // Regex
+    public func matches(pattern: String, ignoreCase: Bool = false) -> [NSTextCheckingResult]? {
+        if let regex = NSRegularExpression.regex(pattern: pattern, ignoreCase: ignoreCase) {
+            let range = NSRange(location: 0, length: length)
+            return regex.matches(in: self, options: [], range: range).map { $0 }
+        }
+        return nil
+    }
+
+    public func contains(pattern: String, ignoreCase: Bool = false) -> Bool? {
+        if let regex = NSRegularExpression.regex(pattern: pattern, ignoreCase: ignoreCase) {
+            let range = NSRange(location: 0, length: self.characters.count)
+            return regex.firstMatch(in: self, options: [], range: range) != nil
+        }
+        return nil
+    }
+
+    func replace(pattern: String, withString replacementString: String, ignoreCase: Bool = false) -> String? {
+        if let regex = NSRegularExpression.regex(pattern: pattern, ignoreCase: ignoreCase) {
+            let range = NSRange(location: 0, length: self.characters.count)
+            return regex.stringByReplacingMatches(in: self, options: [], range: range, withTemplate: replacementString)
+        }
+        return nil
+    }
+
+    public func insert(index: Int, _ string: String) -> String {
+        if index > length {
+            return self + string
+        } else if index < 0 {
+            return string + self
+        }
+        return self[0 ..< index] + string + self[index ..< length]
+    }
+
+    static func random(length len: Int = 0, charset: String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789") -> String {
+        let len = len < 1 ? len : Int.random(max: 16)
+        var result = String()
+        let max = charset.length - 1
+        for _ in 0 ..< len {
+            result += String(charset[Int.random(min: 0, max: max)])
+        }
+        return result
+    }
+    
+    
 }

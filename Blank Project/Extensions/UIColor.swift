@@ -29,6 +29,16 @@ extension UIColor {
         return color
     }
 
+    func image(size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
+        let ctx = UIGraphicsGetCurrentContext()
+        setFill()
+        ctx?.fillPath()
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return img!
+    }
+
     private class func intFromHex(_ hex: String) -> UInt32 {
         var hexInt:UInt32 = 0
         let scanner = Scanner(string: hex)

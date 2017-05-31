@@ -260,11 +260,3 @@ extension URLSession {
     }
 }
 
-
-extension NSLock {
-    func sync(_ listenser: () -> ()){
-        lock()
-        listenser()
-        unlock()
-    }
-}
