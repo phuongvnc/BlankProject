@@ -65,6 +65,9 @@
 		5180B8391ED6B69900F9EC79 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5180B8381ED6B69900F9EC79 /* CoreLocation.framework */; };
 		5180B83F1ED71C6F00F9EC79 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180B83E1ED71C6F00F9EC79 /* UIImage.swift */; };
 		5180B8411ED71CAE00F9EC79 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180B8401ED71CAE00F9EC79 /* UIColor.swift */; };
+		51A2281D1EE505EA00BB21BD /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2281C1EE505EA00BB21BD /* BaseTableViewCell.swift */; };
+		51A2281F1EE5063A00BB21BD /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A2281E1EE5063A00BB21BD /* BaseCollectionViewCell.swift */; };
+		51A228211EE5086200BB21BD /* BaseTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A228201EE5086200BB21BD /* BaseTabbarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +131,9 @@
 		5180B8381ED6B69900F9EC79 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5180B83E1ED71C6F00F9EC79 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		5180B8401ED71CAE00F9EC79 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		51A2281C1EE505EA00BB21BD /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		51A2281E1EE5063A00BB21BD /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		51A228201EE5086200BB21BD /* BaseTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabbarController.swift; sourceTree = "<group>"; };
 		A11F333B7FB89A633A804005 /* Pods-Blank Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blank Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blank Project/Pods-Blank Project.release.xcconfig"; sourceTree = "<group>"; };
 		CB5FBF2FE3CBAFF54BCF657A /* Pods_Blank_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blank_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -322,6 +328,9 @@
 				5133A4521ED7CEBF00385C38 /* BaseNavigationController.swift */,
 				5133A4531ED7CEBF00385C38 /* BaseViewController.swift */,
 				517E6CFC1ED2BBF500D5002E /* BaseNibView.swift */,
+				51A2281C1EE505EA00BB21BD /* BaseTableViewCell.swift */,
+				51A2281E1EE5063A00BB21BD /* BaseCollectionViewCell.swift */,
+				51A228201EE5086200BB21BD /* BaseTabbarController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -486,6 +495,7 @@
 				517E6CDD1ED289AC00D5002E /* Strings.swift in Sources */,
 				517E6CD31ED2898300D5002E /* UIView.swift in Sources */,
 				5141738F1EDE4F8500459F5D /* UITextField.swift in Sources */,
+				51A2281F1EE5063A00BB21BD /* BaseCollectionViewCell.swift in Sources */,
 				513B87D71EDD622700A5D44B /* Dictionary.swift in Sources */,
 				517E6CFD1ED2BBF500D5002E /* BaseNibView.swift in Sources */,
 				514173A91EDE626100459F5D /* Bundle.swift in Sources */,
@@ -495,6 +505,7 @@
 				510475B51EDC096E0068D817 /* String.swift in Sources */,
 				514173AB1EDE633B00459F5D /* Label.swift in Sources */,
 				514173A11EDE604500459F5D /* RefreshControl.swift in Sources */,
+				51A2281D1EE505EA00BB21BD /* BaseTableViewCell.swift in Sources */,
 				5133A4541ED7CEBF00385C38 /* BaseNavigationController.swift in Sources */,
 				517E6CCE1ED2896500D5002E /* User.swift in Sources */,
 				517E6CEF1ED2901100D5002E /* BaseService.swift in Sources */,
@@ -505,6 +516,7 @@
 				517E6CD81ED289A200D5002E /* Date.swift in Sources */,
 				5180B8411ED71CAE00F9EC79 /* UIColor.swift in Sources */,
 				5133A45F1ED7CF9600385C38 /* Dynamic.swift in Sources */,
+				51A228211EE5086200BB21BD /* BaseTabbarController.swift in Sources */,
 				510475B11EDBDA870068D817 /* UICollectionView.swift in Sources */,
 				5133A45E1ED7CF9600385C38 /* DataProvider.swift in Sources */,
 				517E6D031ED2C36900D5002E /* Timer.swift in Sources */,
