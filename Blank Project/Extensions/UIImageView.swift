@@ -43,7 +43,6 @@ extension UIImageView {
         }
         if let _ = completionHandler {
             hnk_setImage(from: url, placeholder: UIImage(), success: completionHandler!, failure: { (error) in
-
             })
         } else {
             hnk_setImage(from: url)

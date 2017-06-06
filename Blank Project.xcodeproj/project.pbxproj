@@ -33,6 +33,8 @@
 		514173A71EDE616300459F5D /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514173A61EDE616300459F5D /* FileManager.swift */; };
 		514173A91EDE626100459F5D /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514173A81EDE626100459F5D /* Bundle.swift */; };
 		514173AB1EDE633B00459F5D /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514173AA1EDE633B00459F5D /* Label.swift */; };
+		517CCA691EE6460F005E919B /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517CCA681EE6460F005E919B /* Optional.swift */; };
+		517CCA6B1EE64806005E919B /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517CCA6A1EE64806005E919B /* UIButton.swift */; };
 		517E6CC41ED2889F00D5002E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CB31ED2889F00D5002E /* AppDelegate.swift */; };
 		517E6CC51ED2889F00D5002E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E6CB51ED2889F00D5002E /* ViewController.swift */; };
 		517E6CC61ED2889F00D5002E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517E6CBB1ED2889F00D5002E /* Assets.xcassets */; };
@@ -101,6 +103,8 @@
 		514173A61EDE616300459F5D /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		514173A81EDE626100459F5D /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		514173AA1EDE633B00459F5D /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		517CCA681EE6460F005E919B /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
+		517CCA6A1EE64806005E919B /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		517E6C9D1ED2880800D5002E /* Blank Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blank Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		517E6CB31ED2889F00D5002E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		517E6CB51ED2889F00D5002E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -244,13 +248,16 @@
 				517E6CF81ED2B64D00D5002E /* DispatchQueue.swift */,
 				514173A61EDE616300459F5D /* FileManager.swift */,
 				5141739C1EDE5E6600459F5D /* Int.swift */,
+				514173AA1EDE633B00459F5D /* Label.swift */,
 				514173A41EDE60CF00459F5D /* NSLock.swift */,
 				5141739A1EDE580400459F5D /* NSObject.swift */,
+				517CCA681EE6460F005E919B /* Optional.swift */,
 				514173A01EDE604500459F5D /* RefreshControl.swift */,
 				5141739E1EDE5F4300459F5D /* Regex.swift */,
 				510475B41EDC096E0068D817 /* String.swift */,
 				517E6D021ED2C36900D5002E /* Timer.swift */,
 				517E6CD01ED2898300D5002E /* UIApplication.swift */,
+				517CCA6A1EE64806005E919B /* UIButton.swift */,
 				510475B01EDBDA870068D817 /* UICollectionView.swift */,
 				5180B8401ED71CAE00F9EC79 /* UIColor.swift */,
 				5180B83E1ED71C6F00F9EC79 /* UIImage.swift */,
@@ -264,7 +271,6 @@
 				5141738E1EDE4F8500459F5D /* UITextField.swift */,
 				517E6CCF1ED2898300D5002E /* UIView.swift */,
 				514173981EDE566600459F5D /* UIViewController.swift */,
-				514173AA1EDE633B00459F5D /* Label.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,11 +278,11 @@
 		517E6CB71ED2889F00D5002E /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				517E6CDA1ED289AC00D5002E /* Strings.swift */,
-				517E6CDB1ED289AC00D5002E /* Helper.swift */,
-				5180B8361ED6B56A00F9EC79 /* LocationManager.swift */,
-				5133A4841ED823F500385C38 /* LocalNotificationManager.swift */,
 				51A228261EE50FD100BB21BD /* Font.swift */,
+				517E6CDB1ED289AC00D5002E /* Helper.swift */,
+				5133A4841ED823F500385C38 /* LocalNotificationManager.swift */,
+				5180B8361ED6B56A00F9EC79 /* LocationManager.swift */,
+				517E6CDA1ED289AC00D5002E /* Strings.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -285,9 +291,9 @@
 			isa = PBXGroup;
 			children = (
 				517E6CDF1ED289E700D5002E /* DatePicker.swift */,
-				51A228221EE50DD100BB21BD /* TagView.swift */,
 				51A228241EE50E0200BB21BD /* FacebookCommon.swift */,
 				51A228281EE548A500BB21BD /* PullTableView.swift */,
+				51A228221EE50DD100BB21BD /* TagView.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -507,6 +513,7 @@
 				51A228271EE50FD100BB21BD /* Font.swift in Sources */,
 				517E6CDD1ED289AC00D5002E /* Strings.swift in Sources */,
 				517E6CD31ED2898300D5002E /* UIView.swift in Sources */,
+				517CCA691EE6460F005E919B /* Optional.swift in Sources */,
 				5141738F1EDE4F8500459F5D /* UITextField.swift in Sources */,
 				51A2281F1EE5063A00BB21BD /* BaseCollectionViewCell.swift in Sources */,
 				513B87D71EDD622700A5D44B /* Dictionary.swift in Sources */,
@@ -526,6 +533,7 @@
 				517E6CCC1ED2893A00D5002E /* UserManager.swift in Sources */,
 				517E6CF71ED2999900D5002E /* ConfigNotification.swift in Sources */,
 				517E6CEE1ED2901100D5002E /* APIPath.swift in Sources */,
+				517CCA6B1EE64806005E919B /* UIButton.swift in Sources */,
 				517E6CF21ED2901100D5002E /* ServiceError.swift in Sources */,
 				517E6CD81ED289A200D5002E /* Date.swift in Sources */,
 				5180B8411ED71CAE00F9EC79 /* UIColor.swift in Sources */,

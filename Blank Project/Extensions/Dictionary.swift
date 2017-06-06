@@ -16,5 +16,5 @@ extension Dictionary {
             self[key] = value
         }
     }
-    
+
 }

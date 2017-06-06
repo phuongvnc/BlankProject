@@ -13,7 +13,7 @@ extension UIView {
     var snapshotImage: UIImage {
         UIView.setAnimationsEnabled(false)
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.main.scale)
-        drawHierarchy(in: self.bounds, afterScreenUpdates: false)
+        drawHierarchy(in: bounds, afterScreenUpdates: false)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         UIView.setAnimationsEnabled(true)
@@ -31,7 +31,7 @@ extension UIView {
         shadowLayer.shadowOpacity = opacity
         shadowLayer.shadowPath = UIBezierPath(roundedRect: shadowLayer.bounds, cornerRadius: cornerRadius ).cgPath
 
-        let bColor = self.backgroundColor?.cgColor
+        let bColor = backgroundColor?.cgColor
         shadowLayer.backgroundColor = bColor
     }
 
@@ -56,7 +56,7 @@ extension UIView {
     }
 
     func removeGradient() {
-        let _ = self.layer.sublayers?.filter({ $0.name == "GradientBackground" }).map({ $0.removeFromSuperlayer() })
+        let _ = layer.sublayers?.filter({ $0.name == "GradientBackground" }).map({ $0.removeFromSuperlayer() })
         layer.mask?.removeFromSuperlayer()
     }
 
@@ -69,7 +69,6 @@ extension UIView {
         layer.borderWidth = borderWidth
         layer.borderColor = color.cgColor
     }
-
 
     class func loadXibView<T: UIView>(fromNib viewType: T.Type, owner: Any?) -> UIView {
         let nibName = String(describing: viewType)

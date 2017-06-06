@@ -25,8 +25,6 @@ extension UIStoryboard {
 
 }
 
-// MARK: App View Controllers
-
 extension UIStoryboardSegue {
     func destinationViewController<T: UIViewController>(aClass: T.Type) -> T {
         guard let controller = destination as? T else {

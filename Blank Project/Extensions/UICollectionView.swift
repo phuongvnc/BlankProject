@@ -41,12 +41,12 @@ extension UICollectionView {
     func dequeueCell<T: UICollectionReusableView> (aClass: T.Type, kind: CollectionViewKind, indexPath: IndexPath) -> T {
         let className = String(describing: aClass)
         guard let cell = dequeueReusableSupplementaryView(ofKind: kind.value,
-                                                    withReuseIdentifier: className,
-                                                    for: indexPath) as? T else {
-                                                        fatalError("\(className) isn't register")
+                                                          withReuseIdentifier: className,
+                                                          for: indexPath) as? T else {
+                                                            fatalError("\(className) isn't register")
         }
-
+        
         return cell
     }
-
+    
 }

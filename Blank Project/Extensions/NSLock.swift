@@ -9,7 +9,7 @@
 import Foundation
 
 extension NSLock {
-    public func sync( block: () -> Void) {
+    func sync( block: () -> Void) {
         let locked = self.try()
         block()
         if locked {

@@ -12,15 +12,6 @@ struct Font {
     static var HiraKakuProN = HiraKakuProNFont()
     static var HiraKakuPro = HiraKakuProFont()
     static var HiraginoSans = HiraginoSansFont()
-
-    static func preloads(completion: (() -> Void)?) {
-        //        dp_background { () -> Void in
-        //            HiraKakuProN.W6(12)
-        //            completion?()
-        //        }
-    }
-
-
 }
 
 class HiraKakuProFont: CustomFont {
@@ -119,9 +110,7 @@ enum PSDFontScale: CGFloat {
 }
 
 
-
-
-let fontScale: PSDFontScale = (Helper.isIPhone4Or4s || Helper.isIPhone5Or5s ? .Phone45 : Helper.isIPhone6Or7 ? .Phone6 : .Phone6p)
+let fontScale: PSDFontScale = (Helper.isiPhone4 || Helper.isiPhone5 ? .Phone45 : Helper.isiPhone6 ? .Phone6 : .Phone6p)
 
 func CCFont(name: FontName, _ type: FontType, _ size: CGFloat) -> UIFont! {
     let fontName = name.rawValue + type.rawValue
@@ -134,6 +123,7 @@ func CCFont(name: FontName, _ type: FontType, _ size: CGFloat) -> UIFont! {
         return UIFont.systemFont(ofSize: fontSize)
     }
 }
+
 class CustomFont {
     var name: FontName! { return nil }
     init() { }

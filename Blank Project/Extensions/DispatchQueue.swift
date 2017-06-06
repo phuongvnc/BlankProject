@@ -10,7 +10,7 @@ import UIKit
 
 extension DispatchQueue {
 
-    class func after(time: TimeInterval,_ block: @escaping () -> ()) {
+    class func after(time: TimeInterval, _ block: @escaping () -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + time) { 
             block()
         }
@@ -23,7 +23,7 @@ class GCDGroup {
     var allCompletion: (() -> ())?
 
     init(thread: DispatchQueue) {
-        queue = DispatchQueue(label: "GROUP")
+        queue = DispatchQueue(label: "DISPATCH_GROUP")
         queue.setTarget(queue: thread)
         group = DispatchGroup()
 
@@ -32,11 +32,11 @@ class GCDGroup {
         }
     }
 
-    func addWork(_ work: @escaping () -> ()) {
+    func addWork(_ work: @escaping (DispatchGroup) -> ()) {
         group.enter()
+        // please add group.leave() in work. If you use group for service
         queue.async(group: group, execute: {
-            work()
-            self.group.leave()
+            work(self.group)
         })
     }
 }

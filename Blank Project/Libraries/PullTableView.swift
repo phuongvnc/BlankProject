@@ -10,16 +10,16 @@ import UIKit
 
 class PullTableView: UITableView {
 
-    var startRefresh: ((UIRefreshControl) -> Void)?
-    var endRefresh: ((UIRefreshControl) -> ())?
-    var setupRefresh: ((UIRefreshControl) -> ())?
+    var startRefresh: ((RefreshControl) -> Void)?
+    var endRefresh: ((RefreshControl) -> ())?
+    var setupRefresh: ((RefreshControl) -> ())?
 
-    var refreshControlView: UIRefreshControl!
+    var refreshControlView: RefreshControl!
     var isRefresh: Bool = false
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        refreshControlView = UIRefreshControl()
+        refreshControlView = RefreshControl()
         refreshControlView.addTarget(self, action: #selector(startRefreshing), for: .valueChanged)
         setupRefresh?(refreshControlView)
     }

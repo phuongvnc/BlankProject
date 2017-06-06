@@ -9,47 +9,47 @@
 import Foundation
 
 extension FileManager {
-    public class var homeDir: String! {
+    class var homeDir: String! {
         return NSHomeDirectory()
     }
 
-    public class var homeUrl: NSURL! {
+    class var homeUrl: NSURL! {
         return NSURL(fileURLWithPath: homeDir, isDirectory: true)
     }
 
-    public class var docDir: String! {
+    class var docDir: String! {
         return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
     }
 
-    public class var docUrl: NSURL! {
+    class var docUrl: NSURL! {
         return NSURL(fileURLWithPath: docDir, isDirectory: true)
     }
 
-    public class var libraryDir: String! {
+    class var libraryDir: String! {
         return NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).first
     }
 
-    public class var libraryUrl: NSURL! {
+    class var libraryUrl: NSURL! {
         return NSURL(fileURLWithPath: libraryDir, isDirectory: true)
     }
 
-    public class var appSupportDir: String! {
+    class var appSupportDir: String! {
         return NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).first
     }
 
-    public class var appSupportUrl: NSURL! {
+    class var appSupportUrl: NSURL! {
         return NSURL(fileURLWithPath: appSupportDir, isDirectory: true)
     }
 
-    public class var tmpDir: String {
+    class var tmpDir: String {
         return NSTemporaryDirectory()
     }
 
-    public class var tmpUrl: NSURL {
+    class var tmpUrl: NSURL {
         return NSURL(fileURLWithPath: tmpDir, isDirectory: true)
     }
 
-    public class func skipBackup(path: String) -> Bool {
+    class func skipBackup(path: String) -> Bool {
         let fm = self.default
         var isDir: ObjCBool = true
         if fm.fileExists(atPath: path, isDirectory: &isDir) {
@@ -73,7 +73,7 @@ extension FileManager {
         return false
     }
 
-    public class func skipBackup() {
+    class func skipBackup() {
         let _ = skipBackup(path: docDir)
         let _ = skipBackup(path: libraryDir)
     }

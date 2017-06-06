@@ -36,27 +36,27 @@ extension Shake where Self: UIView {
 
 class Helper {
 
-    static var isIPhone4Or4s: Bool {
+    static var isiPhone4: Bool {
         return kScreen.size.width == 320 && kScreen.size.height == 480
     }
 
-    static var isIPhone5Or5s: Bool {
+    static var isiPhone5: Bool {
         return kScreen.size.width == 320 && kScreen.size.height == 568
     }
 
-    static var isIPhone6Or7: Bool {
+    static var isiPhone6: Bool {
         return kScreen.size.width == 375 && kScreen.size.height == 667
     }
 
-    static var isIPhone6Or7Plus: Bool {
+    static var isiPhone6Plus: Bool {
         return kScreen.size.width == 414 && kScreen.size.height == 736
     }
 
-    static var isIPhone: Bool {
+    static var isiPhone: Bool {
         return UIDevice.current.userInterfaceIdiom == .phone
     }
 
-    static var isPad: Bool {
+    static var isiPad: Bool {
         return UIDevice.current.userInterfaceIdiom == .pad
     }
 
@@ -102,13 +102,3 @@ class Helper {
 }
 
 
-extension Optional {
-    var isEmpty: Bool {
-        switch self {
-        case .none:
-            return true
-        case .some(_):
-            return false
-        }
-    }
-}

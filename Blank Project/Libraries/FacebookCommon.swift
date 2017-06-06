@@ -16,7 +16,7 @@
 //    case failure(Error)
 //}
 //
-//public class FacebookUser {
+//class FacebookUser {
 //    var userId = ""
 //    var email = ""
 //    var fullName = ""

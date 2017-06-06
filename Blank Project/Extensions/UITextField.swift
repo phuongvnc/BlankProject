@@ -9,8 +9,7 @@
 import UIKit
 
 extension UITextField {
-
-
+    
     func isLimitCharacter(characterLimit: Int, range: NSRange) -> Bool {
         guard let text = self.text else {
             return false

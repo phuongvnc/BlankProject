@@ -10,7 +10,7 @@ import Foundation
 
 extension Array {
     func indexOf(includeElement: (Element) -> Bool) -> Int? {
-        for (index, value) in self.enumerated() {
+        for (index, value) in enumerated() {
             if includeElement(value) {
                 return index
             }

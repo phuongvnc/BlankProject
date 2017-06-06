@@ -8,22 +8,22 @@
 
 import Foundation
 
-public let kCFBundleDisplayNameKey = "kCFBundleDisplayName"
-public let kCFBundleNameKey = "CFBundleName"
-public let kCFBundleShortVersionKey = "CFBundleShortVersionString"
+let kCFBundleDisplayNameKey = "kCFBundleDisplayName"
+let kCFBundleNameKey = "CFBundleName"
+let kCFBundleShortVersionKey = "CFBundleShortVersionString"
 
 extension Bundle {
-    public var name: String {
+    var name: String {
         guard let info = infoDictionary else { return "" }
         return info[kCFBundleDisplayNameKey] as? String ?? info[kCFBundleNameKey] as? String ?? ""
     }
 
-    public var version: String {
+    var version: String {
         guard let info = infoDictionary else { return "" }
         return info[kCFBundleVersionKey as String] as? String ?? ""
     }
 
-    public var build: String {
+    var build: String {
         guard let info = infoDictionary else { return "" }
         return info[kCFBundleShortVersionKey] as? String ?? ""
     }
