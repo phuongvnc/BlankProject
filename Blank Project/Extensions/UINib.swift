@@ -9,11 +9,9 @@
 import UIKit
 
 extension UINib {
-
     static func nib(named nibName: String) -> UINib {
         return UINib(nibName: nibName, bundle: nil)
     }
-
 }
 
 
