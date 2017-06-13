@@ -59,7 +59,7 @@ extension UIView {
             return color.cgColor
         })
         backgroundColor = UIColor.clear
-        layer.addSublayer(gradientLayer)
+        layer.insertSublayer(gradientLayer, at: 0)
     }
 
     func removeGradient() {

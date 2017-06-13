@@ -15,19 +15,20 @@ extension DataRequest {
             if let response = response {
                 self.saveCookies(response: response)
             }
-            
+
             backgroundQueue.addOperation({ () -> Void in
                 if let error = result.error {
                     let apiError = APIError(code: -1, message: error.localizedDescription)
                     OperationQueue.main.addOperation {
                         completion(APIResult.failure(apiError))
                     }
+                    api.logResponse(stype: .error, response: response, value: nil, error: apiError)
                 } else {
                     switch response!.statusCode {
                     case 200...299:
-                        if let object = result.value as? JSObject {
+                        if let object = result.value as? JSObject, let data = object["data"] as? JSObject {
                             OperationQueue.main.addOperation {
-                                completion(APIResult.success(object))
+                                completion(APIResult.success(data))
                             }
                         } else if let array = result.value as? JSArray {
                             OperationQueue.main.addOperation {
@@ -38,6 +39,7 @@ extension DataRequest {
                                 completion(APIResult.failure(APIError.jsonError))
                             }
                         }
+                        api.logResponse(stype: .success, response: response, value: result.value, error: nil)
                         break
                     default:
                         var apiError = APIError(code: -1, message:"Handling error")
@@ -49,6 +51,7 @@ extension DataRequest {
                         OperationQueue.main.addOperation {
                             completion(APIResult.failure(apiError))
                         }
+                        api.logResponse(stype: .error, response: response, value: nil, error: apiError)
                         break
                     }
                 }

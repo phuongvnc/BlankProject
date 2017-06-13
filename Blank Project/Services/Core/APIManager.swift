@@ -12,12 +12,17 @@ import Reachability
 
 
 typealias ServiceResult = Alamofire.Result
-typealias JSObject = [String: AnyObject]
+typealias JSObject = [String: Any]
 typealias JSArray = [JSObject]
 typealias Completion = (ServiceResult<Any>) -> Void
 typealias ServiceCompletion = (_ result: APIResult<Any>) -> Void
 typealias Header = HTTPHeaders
 typealias Parameter = Parameters
+
+enum ResponseStyle {
+    case success
+    case error
+}
 
 
 enum APIResult<T> {
@@ -79,6 +84,7 @@ class APIManager {
     private let manager = SessionManager.default
     private let lock = NSLock()
     private var _taskCount = 0
+    var log = true
 
 
     let validation: DataRequest.Validation = { ( request, result, data) -> DataRequest.ValidationResult in
@@ -100,7 +106,7 @@ class APIManager {
         set {
             lock.sync {
                 let oldValue = self.taskCount
-                self.taskCount = newValue
+                _taskCount = newValue
                 if oldValue == 0 || newValue == 0 {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = newValue > 0
                 }
@@ -137,6 +143,7 @@ class APIManager {
                                         headers: input.header)
         request.validate(validation)
         request.response(completion: completion)
+        logRequest(input: input)
         return request
     }
 
@@ -238,6 +245,36 @@ class APIManager {
             }
         }
 
+    }
+
+    func logRequest(input: BaseInputProtocol) {
+        if log {
+            print("---------------REQUEST---------------")
+            print("✎ URL: \(input.url)")
+            print("✎ Method: \(input.method)")
+            print("✎ Header: \(input.header!)")
+            print("✎ Parameter: \(input.parameter!)")
+            print("-------------------------------------")
+        }
+    }
+
+    func logResponse(stype: ResponseStyle, response: HTTPURLResponse?, value: Any?, error: APIError?, timimg: TimeInterval) {
+        if log {
+            print("---------------RESPONSE--------------")
+            let time = String.init(format: "%0.2fs", timimg)
+            print(stype == .success ? "😍 SUCCESS (\(time))" : "😭 ERROR (\(time))")
+            if let response = response {
+                print("✎ URL: \(response.url!)")
+                print("✎ Status code: \(response.statusCode)")
+                print("✎ Header: \(response.allHeaderFields)")
+            }
+            if stype == .success {
+                print("✎ Body: \(value)")
+            } else {
+                print("✎ Error: \(error!.message)")
+            }
+            print("------------------------------------")
+        }
     }
 
 }

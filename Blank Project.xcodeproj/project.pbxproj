@@ -74,6 +74,8 @@
 		51A228251EE50E0200BB21BD /* FacebookCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A228241EE50E0200BB21BD /* FacebookCommon.swift */; };
 		51A228271EE50FD100BB21BD /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A228261EE50FD100BB21BD /* Font.swift */; };
 		51A228291EE548A500BB21BD /* PullTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A228281EE548A500BB21BD /* PullTableView.swift */; };
+		51D0E7351EEFA15A0048E27A /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0E7331EEFA15A0048E27A /* AlertView.swift */; };
+		51D0E7361EEFA15A0048E27A /* ExpandTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D0E7341EEFA15A0048E27A /* ExpandTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +148,8 @@
 		51A228241EE50E0200BB21BD /* FacebookCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookCommon.swift; sourceTree = "<group>"; };
 		51A228261EE50FD100BB21BD /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		51A228281EE548A500BB21BD /* PullTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullTableView.swift; sourceTree = "<group>"; };
+		51D0E7331EEFA15A0048E27A /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		51D0E7341EEFA15A0048E27A /* ExpandTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandTextField.swift; sourceTree = "<group>"; };
 		A11F333B7FB89A633A804005 /* Pods-Blank Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blank Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blank Project/Pods-Blank Project.release.xcconfig"; sourceTree = "<group>"; };
 		CB5FBF2FE3CBAFF54BCF657A /* Pods_Blank_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blank_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -290,6 +294,8 @@
 		517E6CB81ED2889F00D5002E /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				51D0E7331EEFA15A0048E27A /* AlertView.swift */,
+				51D0E7341EEFA15A0048E27A /* ExpandTextField.swift */,
 				517E6CDF1ED289E700D5002E /* DatePicker.swift */,
 				51A228241EE50E0200BB21BD /* FacebookCommon.swift */,
 				51A228281EE548A500BB21BD /* PullTableView.swift */,
@@ -537,12 +543,14 @@
 				517E6CF21ED2901100D5002E /* ServiceError.swift in Sources */,
 				517E6CD81ED289A200D5002E /* Date.swift in Sources */,
 				5180B8411ED71CAE00F9EC79 /* UIColor.swift in Sources */,
+				51D0E7351EEFA15A0048E27A /* AlertView.swift in Sources */,
 				5133A45F1ED7CF9600385C38 /* Dynamic.swift in Sources */,
 				51A228211EE5086200BB21BD /* BaseTabbarController.swift in Sources */,
 				510475B11EDBDA870068D817 /* UICollectionView.swift in Sources */,
 				5133A45E1ED7CF9600385C38 /* DataProvider.swift in Sources */,
 				51A228251EE50E0200BB21BD /* FacebookCommon.swift in Sources */,
 				517E6D031ED2C36900D5002E /* Timer.swift in Sources */,
+				51D0E7361EEFA15A0048E27A /* ExpandTextField.swift in Sources */,
 				517E6CC51ED2889F00D5002E /* ViewController.swift in Sources */,
 				514173991EDE566600459F5D /* UIViewController.swift in Sources */,
 				517E6D051ED2C55300D5002E /* UIImageView.swift in Sources */,
